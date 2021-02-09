@@ -1,0 +1,102 @@
+[
+  {
+    "State": "Florida",
+    "Domestic Government Filing Fee": 125,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 0,
+    "Our Fee": 150,
+    "Name Reservation (optional)": "NA",
+    "DBA/Tradename including newspaper publication fee (optional)": 71,
+    "Expedite Fee": "NA"
+  },
+  {
+    "State": "Texas",
+    "Domestic Government Filing Fee": 200,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 0,
+    "Our Fee": 150,
+    "Name Reservation (optional)": 40,
+    "DBA/Tradename including newspaper publication fee (optional)": 50,
+    "Expedite Fee": 25
+  },
+  {
+    "State": "New Jersey",
+    "Domestic Government Filing Fee": 100,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 25,
+    "Our Fee": 150,
+    "Name Reservation (optional)": 50,
+    "DBA/Tradename including newspaper publication fee (optional)": 50,
+    "Expedite Fee": 15
+  },
+  {
+    "State": "North Carolina",
+    "Domestic Government Filing Fee": 75,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 0,
+    "Our Fee": 150,
+    "Name Reservation (optional)": 30,
+    "DBA/Tradename including newspaper publication fee (optional)": 26,
+    "Expedite Fee": 100
+  },
+  {
+    "State": "Pennsyvlania",
+    "Domestic Government Filing Fee": 125,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 0,
+    "Our Fee": 150,
+    "Name Reservation (optional)": 70,
+    "DBA/Tradename including newspaper publication fee (optional)": 226,
+    "Expedite Fee": "NA"
+  },
+  {
+    "State": "Ohio",
+    "Domestic Government Filing Fee": 88,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 0,
+    "Our Fee": 150,
+    "Name Reservation (optional)": 39,
+    "DBA/Tradename including newspaper publication fee (optional)": 39,
+    "Expedite Fee": 100
+  },
+  {
+    "State": "Michigan",
+    "Domestic Government Filing Fee": 50,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 0,
+    "Our Fee": 150,
+    "Name Reservation (optional)": 25,
+    "DBA/Tradename including newspaper publication fee (optional)": 25,
+    "Expedite Fee": 50
+  },
+  {
+    "State": "Colorado",
+    "Domestic Government Filing Fee": 50,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 0,
+    "Our Fee": 150,
+    "Name Reservation (optional)": 25,
+    "DBA/Tradename including newspaper publication fee (optional)": 20,
+    "Expedite Fee": "NA"
+  },
+  {
+    "State": "Arizona",
+    "Domestic Government Filing Fee": 45,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 75,
+    "Our Fee": 150,
+    "Name Reservation (optional)": 45,
+    "DBA/Tradename including newspaper publication fee (optional)": 10,
+    "Expedite Fee": 35
+  },
+  {
+    "State": "Maryland",
+    "Domestic Government Filing Fee": 102,
+    "Registered Agent Fee": 50,
+    "Newspaper Notice Fee": 0,
+    "Our Fee": 200,
+    "Name Reservation (optional)": 25,
+    "DBA/Tradename including newspaper publication fee (optional)": 25,
+    "Expedite Fee": "NA"
+  }
+]
