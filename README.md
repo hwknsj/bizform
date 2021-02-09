@@ -4,7 +4,7 @@
 
 <hr/>
 
-<p><em>A demo by joél hawkins torres</em> • <a href='https://joel.fm/' target='_blank'>https://joel.fm</a></p><em>
+<p><em>A demo by joél hawkins torres</em> • <a href='https://joel.fm/' target='_blank'>https://joel.fm</a></p>
 
 ## Installation
 
