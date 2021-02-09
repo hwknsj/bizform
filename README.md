@@ -23,10 +23,10 @@ To build the application, `yarn start` or `npm start`
 
 ## Todo
 
-[ ] Implement CSS transition group for cool spin move on card change
-[ ] Fetch data from remote (i.e. Google Sheets, currently requires authentication)
-[ ] Add appropriate favicon
-[ ] Accessibility implementation
+* Implement CSS transition group for cool spin move on card change
+* Fetch data from remote (i.e. Google Sheets, currently requires authentication)
+* Add appropriate favicon
+* Accessibility implementation
 
 ## Known issues
 
