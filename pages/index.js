@@ -1,29 +1,20 @@
-import React, { useState, useEffect, Fragment } from 'react'
-import StateCard from '../components/StateCard'
+import React, { Fragment, useEffect, useState } from 'react'
+
 import PropTypes from 'prop-types'
 import Select from '../components/Select'
+import StateCard from '../components/StateCard'
+
 const endpoint = process.env.API_ENDPOINT || 'http://localhost:3000/api/states'
 
 const Home = ({ data }) => {
-  const [
-    states,
-    setStates
-  ] = useState([])
-  const [
-    selectedState,
-    setSelectedState
-  ] = useState('')
+  const [states, setStates] = useState([])
+  const [selectedState, setSelectedState] = useState('')
 
-  useEffect(
-    () => {
-      if (data) {
-        setStates(data)
-      }
-    },
-    [
-      data
-    ]
-  )
+  useEffect(() => {
+    if (data) {
+      setStates(data)
+    }
+  }, [data])
 
   const handleChange = ({ target: { value } }) => {
     setSelectedState(JSON.parse(value))
@@ -32,7 +23,11 @@ const Home = ({ data }) => {
   return (
     <Fragment>
       {states && (
-        <Select states={states} selectedState={selectedState} handleChange={handleChange} />
+        <Select
+          states={states}
+          selectedState={selectedState}
+          handleChange={handleChange}
+        />
       )}
       <StateCard state={selectedState} />
     </Fragment>

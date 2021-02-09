@@ -1,7 +1,8 @@
+import { GlobalStyle, InnerStyle, StyledPage, theme } from './styles/Theme'
+
+import Header from './Header'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
-import { theme, StyledPage, GlobalStyle, InnerStyle } from './styles/Theme'
-import Header from './Header'
 
 const Page = ({ children, location }) => {
   return (

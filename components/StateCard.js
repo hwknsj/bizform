@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import PropTypes from 'prop-types'
 import { CardGridStyles } from './styles/CardStyles'
 import Modal from 'react-modal'
+import PropTypes from 'prop-types'
+import { useState } from 'react'
 
 Modal.setAppElement('#__next')
 
@@ -24,10 +24,7 @@ const customStyles = {
 }
 
 const StateCard = ({ state }) => {
-  const [
-    modalIsOpen,
-    setModalOpen
-  ] = useState(false)
+  const [modalIsOpen, setModalOpen] = useState(false)
 
   const openModal = () => {
     setModalOpen(true)
@@ -46,8 +43,8 @@ const StateCard = ({ state }) => {
         <div className='grid'>
           <div className='grid-flex'>
             <div className='grid-heading'>
-              Get help starting your own LLC, C-Corp, or registering as a Sole Proprieter. <br />{' '}
-              <small>Select your state above.</small>
+              Get help starting your own LLC, C-Corp, or registering as a Sole
+              Proprieter. <br /> <small>Select your state above.</small>
             </div>
           </div>
         </div>
@@ -63,10 +60,11 @@ const StateCard = ({ state }) => {
       </div>
       <div className='grid'>
         <div className='grid-flex'>
+          {/* eslint-disable-next-line dot-notation */}
           <div className='grid-heading'>Fee Breakdown in {state['State']}</div>
         </div>
-        {Object.entries(state).map(([ key, value
-        ], index) => {
+        {/* eslint-disable-next-line array-bracket-spacing */}
+        {Object.entries(state).map(([key, value], index) => {
           if (key.startsWith('DBA')) {
             const regex = /(?<title>\S*)\s{1}(?<subtitle>.*)/
             const { groups } = key.match(regex) || key
@@ -86,8 +84,7 @@ const StateCard = ({ state }) => {
             return (
               <div className={`grid-flex i-${index}`} key={key}>
                 <span className='grid-title'>
-                  {title}:
-                  <div className='grid-subtext'>{subtitle}</div>
+                  {title}:<div className='grid-subtext'>{subtitle}</div>
                 </span>{' '}
                 <span className='grid-value'>{value}</span>
               </div>
@@ -95,7 +92,8 @@ const StateCard = ({ state }) => {
           }
           return (
             <div className={`grid-flex i-${index}`} key={key}>
-              <span className='grid-title'>{key}:</span> <span className='grid-value'>{value}</span>
+              <span className='grid-title'>{key}:</span>{' '}
+              <span className='grid-value'>{value}</span>
             </div>
           )
         })}
@@ -111,15 +109,18 @@ const StateCard = ({ state }) => {
         contentLabel='test modal'
         style={customStyles}
       >
-        <CardGridStyles state={false} style={{ margin: 0, padding: '4rem 6rem' }}>
+        <CardGridStyles
+          state={false}
+          style={{ margin: 0, padding: '4rem 6rem' }}
+        >
           <h3 className='serif alt-black'>
-            Hey there, we are busy building the best possible experience for you. Please check back
-            in March 2021 for our official launch.
+            Hey there, we are busy building the best possible experience for
+            you. Please check back in March 2021 for our official launch.
           </h3>
           <h4 className='alt-black'>
             Check out the{' '}
             <a
-              href='https://wizform.com/'
+              href='https://www.wizform.com/'
               className='blue'
               target='_blank'
               rel='noopener noreferrer'

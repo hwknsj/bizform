@@ -30,7 +30,8 @@ export const CardGridStyles = styled.div`
   display: flex;
   flex-direction: column;
   margin: 4rem auto;
-  background: ${props => (props.state ? props.theme.blue : props.theme.offWhite)};
+  background: ${props =>
+    props.state ? props.theme.blue : props.theme.offWhite};
   box-shadow: ${props => props.theme.bsh};
   border-radius: 6px;
   border-width: 0;
@@ -76,7 +77,8 @@ export const CardGridStyles = styled.div`
         font-size: 3.6rem;
         font-family: 'Roboto Slab';
         padding: 0;
-        color: ${props => (props.state ? props.theme.white : props.theme.altBlack)};
+        color: ${props =>
+          props.state ? props.theme.white : props.theme.altBlack};
       }
       .grid-title {
         font-weight: bold;
@@ -102,8 +104,10 @@ export const CardGridStyles = styled.div`
     button {
       border-radius: 4px;
       border-width: 0;
-      background-color: ${props => (props.state ? props.theme.yellow : props.theme.blue)};
-      color: ${props => (props.state ? props.theme.altBlack : props.theme.white)};
+      background-color: ${props =>
+        props.state ? props.theme.yellow : props.theme.blue};
+      color: ${props =>
+        props.state ? props.theme.altBlack : props.theme.white};
       width: 100%;
       text-align: center;
       margin: auto auto 0 auto;

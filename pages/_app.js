@@ -1,8 +1,9 @@
 import 'normalize.css'
-import PropTypes from 'prop-types'
-import Page from '../components/Page'
 
-function MyApp ({ Component, pageProps }) {
+import Page from '../components/Page'
+import PropTypes from 'prop-types'
+
+function MyApp({ Component, pageProps }) {
   return (
     <Page>
       <Component {...pageProps} />
