@@ -1,10 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react'
 
+import InfoCard from '../components/InfoCard'
 import PropTypes from 'prop-types'
 import Select from '../components/Select'
-import StateCard from '../components/StateCard'
-
-const endpoint = process.env.API_ENDPOINT || 'http://localhost:3000/api/states'
 
 const Home = ({ data }) => {
   const [states, setStates] = useState([])
@@ -29,7 +27,7 @@ const Home = ({ data }) => {
           handleChange={handleChange}
         />
       )}
-      <StateCard state={selectedState} />
+      <InfoCard state={selectedState} />
     </Fragment>
   )
 }
@@ -37,6 +35,11 @@ const Home = ({ data }) => {
 Home.propTypes = {
   data: PropTypes.array.isRequired
 }
+
+const endpoint =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000/api/states'
+    : process.env.API_ENDPOINT
 
 // Get api data
 export const getServerSideProps = async () => {

@@ -23,7 +23,7 @@ const customStyles = {
   }
 }
 
-const StateCard = ({ state }) => {
+const InfoCard = ({ state }) => {
   const [modalIsOpen, setModalOpen] = useState(false)
 
   const openModal = () => {
@@ -138,8 +138,9 @@ const StateCard = ({ state }) => {
   )
 }
 
-StateCard.propTypes = {
-  state: PropTypes.object.isRequired
+InfoCard.propTypes = {
+  // state: PropTypes.object.isRequired
+  state: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired
 }
 
-export default StateCard
+export default InfoCard
