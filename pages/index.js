@@ -1,18 +1,30 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useRef } from 'react'
 
 import InfoCard from '../components/InfoCard'
 import PropTypes from 'prop-types'
 import Select from '../components/Select'
 
 const Home = ({ data }) => {
-  const [states, setStates] = useState([])
-  const [selectedState, setSelectedState] = useState('')
+  const [
+    states,
+    setStates
+  ] = useState([])
+  const [
+    selectedState,
+    setSelectedState
+  ] = useState('')
+  const selectRef = useRef(null)
 
-  useEffect(() => {
-    if (data) {
-      setStates(data)
-    }
-  }, [data])
+  useEffect(
+    () => {
+      if (data) {
+        setStates(data)
+      }
+    },
+    [
+      data
+    ]
+  )
 
   const handleChange = ({ target: { value } }) => {
     setSelectedState(JSON.parse(value))
@@ -24,10 +36,11 @@ const Home = ({ data }) => {
         <Select
           states={states}
           selectedState={selectedState}
+          selectRef={selectRef}
           handleChange={handleChange}
         />
       )}
-      <InfoCard state={selectedState} />
+      <InfoCard state={selectedState} selectRef={selectRef} />
     </Fragment>
   )
 }

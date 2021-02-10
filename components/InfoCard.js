@@ -1,5 +1,6 @@
-import { CardGridStyles } from './styles/CardStyles'
+import { CardGridStyles, AnimationStyles } from './styles/CardStyles'
 import Modal from 'react-modal'
+import { CSSTransition } from 'react-transition-group'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
@@ -13,9 +14,9 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    maxWidth: '60vw',
+    maxWidth: '80vw',
     maxHeight: '80vh',
-    overflow: 'scroll',
+    overflowY: 'scroll',
     padding: '0'
   },
   overlay: {
@@ -23,8 +24,11 @@ const customStyles = {
   }
 }
 
-const InfoCard = ({ state }) => {
-  const [modalIsOpen, setModalOpen] = useState(false)
+const InfoCard = ({ state, selectRef }) => {
+  const [
+    modalIsOpen,
+    setModalOpen
+  ] = useState(false)
 
   const openModal = () => {
     setModalOpen(true)
@@ -37,16 +41,24 @@ const InfoCard = ({ state }) => {
     return (
       <CardGridStyles state={false}>
         <div className='card-heading'>
-          <span className='price'>$0</span>
-          <span className='card-subheading'>due today</span>
+          <span className='price line-height'>Making company formation easy</span>
         </div>
         <div className='grid'>
           <div className='grid-flex'>
             <div className='grid-heading'>
-              Get help starting your own LLC, C-Corp, or registering as a Sole
-              Proprieter. <br /> <small>Select your state above.</small>
+              Get help starting your own LLC, C-Corp, or registering as a Sole Proprieter. <br />{' '}
+              <small>Select your state above.</small>
             </div>
           </div>
+        </div>
+        <div className='buttons'>
+          <button
+            type='button'
+            onClick={() =>
+              window.scrollTo({ top: selectRef.current.offsetTop - 20, behavior: 'smooth' })}
+          >
+            Find your state
+          </button>
         </div>
       </CardGridStyles>
     )
@@ -64,7 +76,8 @@ const InfoCard = ({ state }) => {
           <div className='grid-heading'>Fee Breakdown in {state['State']}</div>
         </div>
         {/* eslint-disable-next-line array-bracket-spacing */}
-        {Object.entries(state).map(([key, value], index) => {
+        {Object.entries(state).map(([ key, value
+        ], index) => {
           if (key.startsWith('DBA')) {
             const regex = /(?<title>\S*)\s{1}(?<subtitle>.*)/
             const { groups } = key.match(regex) || key
@@ -92,8 +105,7 @@ const InfoCard = ({ state }) => {
           }
           return (
             <div className={`grid-flex i-${index}`} key={key}>
-              <span className='grid-title'>{key}:</span>{' '}
-              <span className='grid-value'>{value}</span>
+              <span className='grid-title'>{key}:</span> <span className='grid-value'>{value}</span>
             </div>
           )
         })}
@@ -109,13 +121,10 @@ const InfoCard = ({ state }) => {
         contentLabel='test modal'
         style={customStyles}
       >
-        <CardGridStyles
-          state={false}
-          style={{ margin: 0, padding: '4rem 6rem' }}
-        >
+        <CardGridStyles state={false} style={{ margin: 0, maxWidth: 'inherit' }} className='p2'>
           <h3 className='serif alt-black'>
-            Hey there, we are busy building the best possible experience for
-            you. Please check back in March 2021 for our official launch.
+            Hey there, we are busy building the best possible experience for you. Please check back
+            in March 2021 for our official launch.
           </h3>
           <h4 className='alt-black'>
             Check out the{' '}
@@ -139,8 +148,10 @@ const InfoCard = ({ state }) => {
 }
 
 InfoCard.propTypes = {
-  // state: PropTypes.object.isRequired
-  state: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired
+  state: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string
+  ]).isRequired
 }
 
 export default InfoCard

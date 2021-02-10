@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 const SelectStyles = styled.div`
-  min-width: 800px;
+  /* min-width: 800px; */
+  width: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: row;
@@ -19,7 +20,7 @@ const SelectStyles = styled.div`
   select {
     flex: 0 0.5 200px;
     display: block;
-    width: 100%;
+    /* width: 100%; */
     height: 3.8rem;
     padding: 0.8rem 1.2rem;
     font-size: 1.4rem;

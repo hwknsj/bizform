@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
 import SelectStyles from './styles/SelectStyles'
 
-const Select = ({ states, selectedState, handleChange }) => {
+const Select = ({ states, selectedState, handleChange, selectRef }) => {
   return (
     <SelectStyles>
-      <label htmlFor='states'>Select your state</label>
       {states && (
-        <select name='states' id='states' onChange={e => handleChange(e)}>
-          <option disabled selected={!selectedState}>
+      <><label htmlFor='states'>Select your state</label>
+          <select name='states' id='states' className='inline' ref={selectRef} onChange={e => handleChange(e)} defaultValue={''}>
+          <option disabled value={''} >
             {' '}
             -- select an option --{' '}
           </option>
@@ -16,7 +16,7 @@ const Select = ({ states, selectedState, handleChange }) => {
               {state['State']}
             </option>
           ))}
-        </select>
+        </select></>
       )}
     </SelectStyles>
   )
