@@ -113,7 +113,7 @@ export const CardGridStyles = styled.div`
         content: '$';
       }
     }
-    @media (max-width: ${({ theme }) => theme.maxWidthSm};) {
+    @media (max-width: ${({ theme }) => theme.maxWidthSm}) {
       padding: 0 4rem 2rem 4rem;
     }
   }
