@@ -1,5 +1,14 @@
+import {
+  Fragment,
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState
+} from 'react'
+
 import PropTypes from 'prop-types'
-import { Fragment, useMemo, useEffect, useRef, useCallback, useState, memo } from 'react'
 import SelectStyles from './styles/SelectStyles'
 
 const RenderSelect = ({ children, onChange, selectRef }) => (
@@ -23,19 +32,11 @@ const RenderSelect = ({ children, onChange, selectRef }) => (
 )
 
 const Select = ({ data, setSelectedState, selectRef }) => {
-  const [
-    states,
-    setStates
-  ] = useState([])
+  const [states, setStates] = useState([])
 
-  useEffect(
-    () => {
-      setStates(data)
-    },
-    [
-      data
-    ]
-  )
+  useEffect(() => {
+    setStates(data)
+  }, [data])
 
   const renderOptions = useCallback(
     () =>
@@ -44,9 +45,7 @@ const Select = ({ data, setSelectedState, selectRef }) => {
           {state['State']}
         </option>
       )),
-    [
-      states
-    ]
+    [states]
   )
 
   const handleChange = value => {
@@ -55,7 +54,11 @@ const Select = ({ data, setSelectedState, selectRef }) => {
 
   return (
     <SelectStyles>
-      <RenderSelect className='select' onChange={handleChange} selectRef={selectRef}>
+      <RenderSelect
+        className='select'
+        onChange={handleChange}
+        selectRef={selectRef}
+      >
         {renderOptions()}
       </RenderSelect>
     </SelectStyles>

@@ -1,5 +1,6 @@
-import fonts from './Fonts'
 import styled, { createGlobalStyle } from 'styled-components'
+
+import fonts from './Fonts'
 
 export const theme = {
   red: '#FF0000',

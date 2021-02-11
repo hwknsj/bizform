@@ -1,20 +1,21 @@
-import React, { Fragment, useEffect, useState, useRef, useMemo } from 'react'
+import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 
+import Card from '../components/CardAnimation'
 import PropTypes from 'prop-types'
 import Select from '../components/Select'
-import Card from '../components/CardAnimation'
 
 const Home = ({ data }) => {
-  const [
-    selectedState,
-    setSelectedState
-  ] = useState('')
+  const [selectedState, setSelectedState] = useState('')
 
   const selectRef = useRef(null)
 
   return (
     <Fragment>
-      <Select data={data} setSelectedState={setSelectedState} selectRef={selectRef} />
+      <Select
+        data={data}
+        setSelectedState={setSelectedState}
+        selectRef={selectRef}
+      />
       <Card selectedState={selectedState} selectRef={selectRef} />
     </Fragment>
   )
