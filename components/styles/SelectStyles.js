@@ -1,12 +1,11 @@
 import styled from 'styled-components'
 
 const SelectStyles = styled.div`
-  /* min-width: 800px; */
   width: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   & > * {
@@ -16,11 +15,13 @@ const SelectStyles = styled.div`
     flex: 0 1 auto;
     font-weight: bold;
     color: ${props => props.theme.altBlack};
+    line-break: strict;
+    white-space: nowrap;
   }
-  select {
+  select,
+  .select {
     flex: 0 0.5 200px;
     display: block;
-    /* width: 100%; */
     height: 3.8rem;
     padding: 0.8rem 1.2rem;
     font-size: 1.4rem;
@@ -28,6 +29,11 @@ const SelectStyles = styled.div`
     align-items: middle;
     background-color: ${props => props.theme.white};
     border: 1px solid ${props => props.theme.altBlack};
+  }
+  @media screen and (max-width: ${({ theme }) => theme.maxWidthSm}) {
+    label {
+      margin-bottom: 1rem;
+    }
   }
 `
 

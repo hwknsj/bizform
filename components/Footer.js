@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const FooterStyles = styled.footer`
   flex-shrink: 0;
-  /* height: 100px; */
+  min-height: 300px;
   width: 100%;
   color: ${({ theme }) => theme.white};
   background-color: ${({ theme }) => theme.blue};
@@ -12,14 +12,15 @@ const FooterStyles = styled.footer`
     flex: 0 1 auto;
     margin: 0 auto;
     padding: 2rem;
-    /* align-self: center; */
+    align-self: center;
     .footer-grid {
-      /* flex: 0; */
+      flex: 0;
       display: grid;
       grid-auto-columns: 1fr auto;
       p {
         font-family: 'Lato', sans-serif;
         font-weight: 'light';
+        font-style: italic;
       }
       .footer-flex {
         display: flex;
@@ -31,7 +32,7 @@ const FooterStyles = styled.footer`
         span {
           font-family: 'Roboto Slab';
           line-height: ${({ theme }) => theme.lineHeight * 1.4};
-          .left {
+          &.left {
             font-weight: bold;
           }
           a {
@@ -56,7 +57,7 @@ const Footer = () => {
             <span className='left'>www/</span>{' '}
             <span className='right'>
               <a href='https://joel.fm' target='_blank' rel='noopener noreferrer'>
-                https://joel.fm/
+                https://joel.fm
               </a>
             </span>
           </div>

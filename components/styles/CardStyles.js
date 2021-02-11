@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-// TODO: implement cool transition when card flips
 export const AnimationStyles = styled.div`
   position: relative;
   .card {
@@ -8,24 +7,28 @@ export const AnimationStyles = styled.div`
     position: relative;
     transition: transform 0.4s;
     backface-visibility: hidden;
+    font-feature-settings: 'tnum';
+    font-variant-numeric: tabular-nums;
   }
   .card-enter {
-    transform: rotateX(0.5turn);
+    transform: rotateY(0.5turn);
   }
   .card-enter-active {
-    transform: rotateX(0);
+    transform: rotateY(0);
   }
   .card-exit {
-    /* top: 0; */
+    top: 0;
     position: absolute;
-    transform: rotateX(0);
+    transform: rotateY(0);
   }
   .card-exit-active {
-    transform: rotateX(0.5turn);
+    transform: rotateY(0.5turn);
   }
 `
 
 export const CardGridStyles = styled.div`
+  transition: transform 0.4s;
+  backface-visibility: hidden;
   line-height: ${({ theme }) => theme.lineHeight * 2};
   color: white;
   display: flex;
@@ -37,8 +40,10 @@ export const CardGridStyles = styled.div`
   border-width: 0;
   color: ${props => (props.state ? props.theme.white : props.theme.altBlack)};
   width: ${({ theme }) => theme.cardWidth};
-  /* height: 100%; */
   justify-self: center;
+  align-self: stretch;
+  height: 100%;
+  flex: 1;
   .card-heading {
     padding: 1rem 3rem;
     padding-bottom: 0;
@@ -53,6 +58,13 @@ export const CardGridStyles = styled.div`
     .card-subheading {
       font-size: 3.6rem;
     }
+    @media (max-width: ${({ theme }) => theme.maxWidthXs}) {
+      padding: 1rem 2rem;
+      line-height: 1.42;
+      .price {
+        font-size: 5.6rem;
+      }
+    }
     @media (max-width: ${({ theme }) => theme.maxWidthSm}) {
       line-height: 1.42;
       .price {
@@ -60,7 +72,10 @@ export const CardGridStyles = styled.div`
       }
     }
   }
-  @media (max-width: ${({ theme }) => theme.maxWidthSm}) {
+  @media screen and (max-width: ${({ theme }) => theme.maxWidthXs}) {
+    max-width: 95vw;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.maxWidthSm}) {
     max-width: 90vw;
   }
   .grid {
@@ -77,13 +92,6 @@ export const CardGridStyles = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      &.i-0 {
-        display: none;
-      }
-      &.i-2::after {
-        font-size: 1.2rem;
-        color: ${props => props.theme.lightGrey};
-      }
       .grid-heading {
         font-size: 3.6rem;
         font-family: 'Roboto Slab';
@@ -113,6 +121,9 @@ export const CardGridStyles = styled.div`
         content: '$';
       }
     }
+    @media (max-width: ${({ theme }) => theme.maxWidthXs}) {
+      padding: 0 2rem 2rem 2rem;
+    }
     @media (max-width: ${({ theme }) => theme.maxWidthSm}) {
       padding: 0 4rem 2rem 4rem;
     }
@@ -120,9 +131,7 @@ export const CardGridStyles = styled.div`
   .buttons {
     bottom: 0;
     margin: auto auto 4rem auto;
-    /* width: minmax(200px, 33%); */
     flex-shrink: 0;
-    /* flex-grow: 1; */
     flex-basis: auto;
     align-self: flex-end;
     white-space: nowrap;
@@ -131,7 +140,6 @@ export const CardGridStyles = styled.div`
       border-width: 0;
       background-color: ${props => (props.state ? props.theme.yellow : props.theme.blue)};
       color: ${props => (props.state ? props.theme.altBlack : props.theme.white)};
-      /* width: 100%; */
       text-align: center;
       margin: auto auto 0 auto;
       padding: 2rem 4rem;
