@@ -23,7 +23,8 @@ const Page = ({ children, location }) => {
 }
 
 Page.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
+  location: PropTypes.string
 }
 
 export default Page

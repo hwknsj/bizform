@@ -1,12 +1,4 @@
-import {
-  Fragment,
-  memo,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState
-} from 'react'
+import { Fragment, useCallback, useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types'
 import SelectStyles from './styles/SelectStyles'
@@ -41,8 +33,8 @@ const Select = ({ data, setSelectedState, selectRef }) => {
   const renderOptions = useCallback(
     () =>
       states.map(state => (
-        <option key={state['State']} value={JSON.stringify(state)}>
-          {state['State']}
+        <option key={state.State} value={JSON.stringify(state)}>
+          {state.State}
         </option>
       )),
     [states]
@@ -66,6 +58,15 @@ const Select = ({ data, setSelectedState, selectRef }) => {
 }
 
 Select.propTypes = {
-  states: PropTypes.array
+  data: PropTypes.array,
+  setSelectedState: PropTypes.func.isRequired,
+  selectRef: PropTypes.object.isRequired
 }
+
+RenderSelect.propTypes = {
+  children: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  selectRef: PropTypes.object.isRequired
+}
+
 export default Select

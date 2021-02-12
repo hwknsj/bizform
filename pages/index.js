@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import React, { Fragment, useRef, useState } from 'react'
 
 import Card from '../components/CardAnimation'
 import PropTypes from 'prop-types'

@@ -3,16 +3,13 @@ import Modal from './Modal'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
-const InfoCard = ({ selectedState, selectRef, animate, setAnimate }) => {
-  const [modalIsOpen, setModalOpen] = useState(false)
-
-  const openModal = () => {
-    setModalOpen(true)
-  }
-  const closeModal = () => {
-    setModalOpen(false)
-  }
-
+const renderInfoCard = (
+  selectedState,
+  selectRef,
+  openModal,
+  closeModal,
+  modalIsOpen
+) => {
   if (!selectedState) {
     return (
       <CardGridStyles state={false}>
@@ -56,7 +53,7 @@ const InfoCard = ({ selectedState, selectRef, animate, setAnimate }) => {
         <div className='grid-flex'>
           {/* eslint-disable-next-line dot-notation */}
           <div className='grid-heading'>
-            Fee Breakdown in {selectedState['State']}
+            Fee Breakdown in {selectedState.State}
           </div>
         </div>
         {/* eslint-disable-next-line array-bracket-spacing */}
@@ -106,8 +103,28 @@ const InfoCard = ({ selectedState, selectRef, animate, setAnimate }) => {
   )
 }
 
+const InfoCard = ({ selectedState, selectRef }) => {
+  const [modalIsOpen, setModalOpen] = useState(false)
+
+  const openModal = () => {
+    setModalOpen(true)
+  }
+  const closeModal = () => {
+    setModalOpen(false)
+  }
+
+  return renderInfoCard(
+    selectedState,
+    selectRef,
+    openModal,
+    closeModal,
+    modalIsOpen
+  )
+}
+
 InfoCard.propTypes = {
-  selectedState: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+  selectedState: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  selectRef: PropTypes.object.isRequired
 }
 
 export default InfoCard

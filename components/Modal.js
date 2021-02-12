@@ -1,35 +1,20 @@
+import ModalStyles, { ModalStylesObject } from './styles/ModalStyles'
+
 import { CardGridStyles } from './styles/CardStyles'
 import Modal from 'react-modal'
-import ModalStyles from './styles/ModalStyles'
+import PropTypes from 'prop-types'
 
-Modal.setAppElement('#__next')
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    maxWidth: '80vw',
-    maxHeight: '80vh',
-    overflowY: 'scroll',
-    padding: '0'
-  },
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
-  }
-}
+Modal.setAppElement('body')
 
 const renderModal = ({ modalIsOpen, closeModal }) => {
   return (
     <ModalStyles>
       <Modal
+        // closeTimeoutMS={400}
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel='Launching March 2021!'
-        style={customStyles}
+        style={{ ...ModalStylesObject }}
       >
         <CardGridStyles
           state={false}
@@ -37,9 +22,9 @@ const renderModal = ({ modalIsOpen, closeModal }) => {
           className='p2'
         >
           <h3 className='serif alt-black'>
-            <span className='bold'>Hold on!</span> We're just as excited as you
-            are to get started–look forward to March 2021 for our official
-            launch. Right now we're working hard building the best possible
+            <span className='bold'>Hold on!</span> We&apos;re just as excited as
+            you are to get started–look forward to March 2021 for our official
+            launch. Right now we&apos;re working hard building the best possible
             experience for you so that you can begin building your own business.
             Subscribe to our mailing list so you can be the first to know.
           </h3>
@@ -62,6 +47,11 @@ const renderModal = ({ modalIsOpen, closeModal }) => {
       </Modal>
     </ModalStyles>
   )
+}
+
+renderModal.propTypes = {
+  modalIsOpen: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired
 }
 
 export { renderModal as default }

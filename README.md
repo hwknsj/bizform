@@ -1,4 +1,4 @@
-# WizForm alpha-0.0.1
+# BizForm
 <hr/>
 <img src='https://uploads-ssl.webflow.com/5fdeb4b5db1911baf9bcf184/5ff34a9fb1ab6da82d38a4a8_WizForm-logo-1-p-500.png' style='margin: 0 auto; text-align: center;'/>
 
