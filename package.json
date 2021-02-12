@@ -1,6 +1,6 @@
 {
   "name": "wizform-frontend",
-  "version": "0.0.1",
+  "version": "0.9.1",
   "private": true,
   "author": "joél hawkins torres <joel@joel.fm> (https://joel.fm)",
   "description": "A demo front-end application for WizForm (https://www.wizform.com).",
@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/hwknsj/wizform-frontend"
   },
+  "homepage": "https://bizform.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,7 +16,7 @@
     "format": "run-s format:sort-imports format:prettier",
     "format:prettier": "prettier --loglevel warn --single-quote --write './**/*.{js,jsx,ts,tsx,json,scss,css}'",
     "format:sort-imports": "import-sort --write './**/*.{js,jsx,ts,tsx}'",
-    "lint": "eslint --max-warnings 0 'src/**/*.{js,jsx,ts,tsx}'"
+    "lint": "eslint --max-warnings 0 './**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -34,6 +35,8 @@
     "@babel/preset-env": "^7.12.13",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
+    "@types/react-modal": "^3.12.0",
+    "@types/styled-components": "^5.1.7",
     "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.19.0",

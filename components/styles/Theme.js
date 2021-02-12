@@ -1,5 +1,6 @@
-import fonts from './Fonts'
 import styled, { createGlobalStyle } from 'styled-components'
+
+import fonts from './Fonts'
 
 export const theme = {
   red: '#FF0000',
@@ -11,12 +12,11 @@ export const theme = {
   white: '#ffffff',
   lightGrey: '#E1E1E1',
   offWhite: '#FAFAFA',
-  // offWhite: '#EAEDF1',
-  // offWhite: '#EEE',
   yellow: '#f0b84c',
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
   bsh: '2px 12px 24px 0px rgba(0, 0, 0, 0.2)',
   bshBlue: '2px 12px 24px 0px rgba(3, 0, 0, 0.2)',
+  maxWidthXs: '422px',
   maxWidthSm: '688px',
   maxWidthMd: '992px',
   maxWidthLg: '1312px',
@@ -28,8 +28,6 @@ export const theme = {
 export const StyledPage = styled.div`
   background: white;
   color: ${props => props.theme.black};
-  /* display: grid;
-  grid-template-rows: 1fr auto; */
   min-height: 100%;
 `
 
@@ -40,16 +38,9 @@ export const InnerStyle = styled.div`
   grid-template-rows: 1fr;
   max-width: ${props => props.theme.maxWidth};
   width: 100%;
-  /* height: 100%; */
   min-height: 100%;
   margin: 0 auto;
   padding: 4rem;
-  @media (max-width: ${theme.maxWidthSm}) {
-    /* padding: 1rem; */
-  }
-  @media (max-width: ${theme.maxWidthMd}) {
-    /* padding: 2rem; */
-  }
   .container {
     align-items: stretch;
     display: grid;
@@ -87,7 +78,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     display: flex;
     flex-direction: column;
-    max-height: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
     font-size: 1.6rem;

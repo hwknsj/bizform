@@ -1,10 +1,10 @@
 import { GlobalStyle, InnerStyle, StyledPage, theme } from './styles/Theme'
 
+import Footer from './Footer'
+import Head from 'next/head'
 import Header from './Header'
 import PropTypes from 'prop-types'
-import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
-import Footer from './Footer'
 
 const Page = ({ children, location }) => {
   return (
@@ -23,7 +23,8 @@ const Page = ({ children, location }) => {
 }
 
 Page.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
+  location: PropTypes.string
 }
 
 export default Page

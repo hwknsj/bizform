@@ -1,46 +1,22 @@
-import React, { Fragment, useEffect, useState, useRef } from 'react'
+import React, { Fragment, useRef, useState } from 'react'
 
-import InfoCard from '../components/InfoCard'
+import Card from '../components/CardAnimation'
 import PropTypes from 'prop-types'
 import Select from '../components/Select'
 
 const Home = ({ data }) => {
-  const [
-    states,
-    setStates
-  ] = useState([])
-  const [
-    selectedState,
-    setSelectedState
-  ] = useState('')
+  const [selectedState, setSelectedState] = useState('')
+
   const selectRef = useRef(null)
-
-  useEffect(
-    () => {
-      if (data) {
-        setStates(data)
-      }
-    },
-    [
-      data
-    ]
-  )
-
-  const handleChange = ({ target: { value } }) => {
-    setSelectedState(JSON.parse(value))
-  }
 
   return (
     <Fragment>
-      {states && (
-        <Select
-          states={states}
-          selectedState={selectedState}
-          selectRef={selectRef}
-          handleChange={handleChange}
-        />
-      )}
-      <InfoCard state={selectedState} selectRef={selectRef} />
+      <Select
+        data={data}
+        setSelectedState={setSelectedState}
+        selectRef={selectRef}
+      />
+      <Card selectedState={selectedState} selectRef={selectRef} />
     </Fragment>
   )
 }
@@ -55,7 +31,7 @@ const endpoint =
     : process.env.API_ENDPOINT
 
 // Get api data
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch(endpoint, { method: 'GET' })
   const data = await res.json()
   return { props: { data } }

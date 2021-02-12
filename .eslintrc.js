@@ -19,6 +19,6 @@ module.exports = {
   plugins: ['react', 'promise', 'import', 'node'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'space-before-function-paren': 'always'
+    'space-before-function-paren': 'warn'
   }
 }

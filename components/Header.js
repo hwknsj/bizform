@@ -10,7 +10,7 @@ const Header = ({ title }) => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          {title || 'WizForm'}
+          {title || 'BizForm'}
         </a>
       </h1>
       <hr />
