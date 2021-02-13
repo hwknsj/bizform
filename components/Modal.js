@@ -16,12 +16,17 @@ const renderModal = ({ modalIsOpen, closeModal }) => {
         contentLabel='Launching March 2021!'
         style={{ ...ModalStylesObject }}
       >
-        <CardGridStyles state={false} style={{ margin: 0, maxWidth: 'inherit' }} className='p2'>
+        <CardGridStyles
+          state={false}
+          style={{ margin: 0, maxWidth: 'inherit' }}
+          className='p2'
+        >
           <h3 className='serif alt-black'>
-            <span className='bold'>Hold on!</span> We&apos;re just as excited as you are to get
-            started–look forward to March 2021 for our official launch. Right now we&apos;re working
-            hard building the best possible experience for you so that you can begin building your
-            own business. Subscribe to our mailing list so you can be the first to know.
+            <span className='bold'>Hold on!</span> We&apos;re just as excited as
+            you are to get started–look forward to March 2021 for our official
+            launch. Right now we&apos;re working hard building the best possible
+            experience for you so that you can begin building your own business.
+            Subscribe to our mailing list so you can be the first to know.
           </h3>
           <h4 className='alt-black'>
             Check out the{' '}

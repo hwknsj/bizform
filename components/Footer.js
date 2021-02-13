@@ -1,43 +1,52 @@
 import styled from 'styled-components'
 
 const FooterStyles = styled.footer`
+  margin-top: 0;
+  padding-top: 0;
   flex-shrink: 0;
-  min-height: 300px;
   width: 100%;
   color: ${({ theme }) => theme.white};
   background-color: ${({ theme }) => theme.blue};
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   .footer-content {
-    flex: 0 1 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-grow: 1;
     margin: 0 auto;
-    padding: 2rem;
+    width: ${({ theme }) => theme.cardWidth};
+    padding: 4rem;
     align-self: center;
+    justify-content: center;
     .footer-grid {
-      flex: 0;
+      margin: 0 auto;
+      max-width: ${({ theme }) => theme.cardWidth};
       display: grid;
       grid-auto-columns: 1fr auto;
-      p {
+      h3 {
         font-family: 'Lato', sans-serif;
         font-weight: 'light';
         font-style: italic;
+        color: ${({ theme }) => theme.yellow};
       }
       .footer-flex {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-self: flex-end;
-        justify-content: space-between;
-        width: 100%;
+        justify-items: space-between;
         span {
           font-family: 'Roboto Slab';
           line-height: ${({ theme }) => theme.lineHeight * 1.4};
           &.left {
             font-weight: bold;
+            margin-right: 2rem;
           }
-          a {
-            font-family: 'Roboto Slab';
-            color: ${({ theme }) => theme.yellow};
+          &.right {
+            margin-left: auto;
+            a {
+              font-family: 'Roboto Slab';
+              color: ${({ theme }) => theme.yellow};
+            }
           }
         }
       }
@@ -50,7 +59,7 @@ const Footer = () => {
     <FooterStyles>
       <div className='footer-content'>
         <div className='footer-grid'>
-          <p>A demo by joél hawkins torres</p>
+          <h3>A demo by joél hawkins torres</h3>
         </div>
         <div className='footer-grid'>
           <div className='footer-flex'>
@@ -80,7 +89,11 @@ const Footer = () => {
           <div className='footer-flex'>
             <span className='left'>in/</span>{' '}
             <span className='right'>
-              <a href='https://' target='_blank' rel='noopener noreferrer'>
+              <a
+                href='https://www.linkedin.com/in/hwwknsj'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 @hwknsj
               </a>
             </span>

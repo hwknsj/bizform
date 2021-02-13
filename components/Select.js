@@ -24,19 +24,11 @@ const RenderSelect = ({ children, onChange, selectRef }) => (
 )
 
 const Select = ({ data, setSelectedState, selectRef }) => {
-  const [
-    states,
-    setStates
-  ] = useState([])
+  const [states, setStates] = useState([])
 
-  useEffect(
-    () => {
-      setStates(data)
-    },
-    [
-      data
-    ]
-  )
+  useEffect(() => {
+    setStates(data)
+  }, [data])
 
   const renderOptions = useCallback(
     () =>
@@ -45,18 +37,18 @@ const Select = ({ data, setSelectedState, selectRef }) => {
           {state.State}
         </option>
       )),
-    [
-      states
-    ]
+    [states]
   )
 
-  const handleChange = value => {
-    setSelectedState(JSON.parse(value))
-  }
+  const handleChange = value => setSelectedState(() => JSON.parse(value))
 
   return (
     <SelectStyles>
-      <RenderSelect className='select' onChange={handleChange} selectRef={selectRef}>
+      <RenderSelect
+        className='select'
+        onChange={handleChange}
+        selectRef={selectRef}
+      >
         {renderOptions()}
       </RenderSelect>
     </SelectStyles>

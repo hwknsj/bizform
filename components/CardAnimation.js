@@ -12,7 +12,7 @@ const Card = ({ selectedState, selectRef }) => {
           unmountOnExit
           className='card'
           classNames='card'
-          key={selectedState}
+          key={selectedState.State}
           timeout={{ enter: 400, exit: 400 }}
         >
           <InfoCard selectedState={selectedState} selectRef={selectRef} />
@@ -23,10 +23,7 @@ const Card = ({ selectedState, selectRef }) => {
 }
 
 Card.propTypes = {
-  selectedState: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.string
-  ]),
+  selectedState: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   selectRef: PropTypes.object.isRequired
 }
 

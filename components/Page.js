@@ -16,8 +16,8 @@ const Page = ({ children, location }) => {
       <StyledPage>
         <Header title={location} />
         <InnerStyle>{children}</InnerStyle>
-        <Footer />
       </StyledPage>
+      <Footer />
     </ThemeProvider>
   )
 }

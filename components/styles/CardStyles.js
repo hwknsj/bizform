@@ -33,7 +33,7 @@ export const CardGridStyles = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  margin: 4rem auto;
+  margin: 8rem auto 0 auto;
   background: ${props =>
     props.state ? props.theme.blue : props.theme.offWhite};
   box-shadow: ${props => props.theme.bsh};
@@ -41,10 +41,7 @@ export const CardGridStyles = styled.div`
   border-width: 0;
   color: ${props => (props.state ? props.theme.white : props.theme.altBlack)};
   width: ${({ theme }) => theme.cardWidth};
-  justify-self: center;
-  align-self: stretch;
-  height: 100%;
-  flex: 1;
+  height: ${({ theme }) => theme.cardHeight};
   .card-heading {
     padding: 1rem 3rem;
     padding-bottom: 0;
@@ -92,7 +89,7 @@ export const CardGridStyles = styled.div`
     .grid-flex {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-content: flex-start;
       .grid-heading {
         font-size: 3.6rem;
         font-family: 'Roboto Slab';
