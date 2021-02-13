@@ -1,18 +1,22 @@
 import HeaderStyles from './styles/HeaderStyles'
+import Image from 'next/image'
 import PropTypes from 'prop-types'
 
 const Header = ({ title }) => {
   return (
     <HeaderStyles>
-      <h1 className='logo'>
-        <a
-          href='https://www.wizform.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          {title || 'BizForm'}
-        </a>
-      </h1>
+      <div className='logo-image'>
+        <Image
+          src='/bizform-logo.svg'
+          alt='BizForm Logo'
+          title='BizForm Logo'
+          width={1500}
+          height={380}
+          layout='responsive'
+          objectFit='cover'
+          objectPosition='center'
+        />
+      </div>
       <hr />
     </HeaderStyles>
   )

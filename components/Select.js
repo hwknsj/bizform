@@ -40,9 +40,7 @@ const Select = ({ data, setSelectedState, selectRef }) => {
     [states]
   )
 
-  const handleChange = value => {
-    setSelectedState(JSON.parse(value))
-  }
+  const handleChange = value => setSelectedState(() => JSON.parse(value))
 
   return (
     <SelectStyles>
@@ -64,7 +62,7 @@ Select.propTypes = {
 }
 
 RenderSelect.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.array,
   onChange: PropTypes.func.isRequired,
   selectRef: PropTypes.object.isRequired
 }

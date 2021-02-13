@@ -1,6 +1,6 @@
 # BizForm
 <hr/>
-<img src='https://uploads-ssl.webflow.com/5fdeb4b5db1911baf9bcf184/5ff34a9fb1ab6da82d38a4a8_WizForm-logo-1-p-500.png' style='margin: 0 auto; text-align: center;'/>
+<img src='/public/bizform-logo.png' alt='BizForm Logo' title='BizForm Logo' style='max-width: 100%;' />
 
 <hr/>
 
@@ -23,9 +23,10 @@ To build the application, `yarn start` or `npm start`
 
 ## Todo
 
-* Implement CSS transition group for cool spin move on card change
+Updates as of version 0.9.2:
+* ~~Implement CSS transition group for cool spin move on card change~~
 * Fetch data from remote (i.e. Google Sheets, currently requires authentication)
-* Add appropriate favicon
+* ~~Add appropriate favicon~~
 * Accessibility implementation
 
 ## Known issues

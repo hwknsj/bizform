@@ -29,6 +29,10 @@ const SelectStyles = styled.div`
     align-items: middle;
     background-color: ${props => props.theme.white};
     border: 1px solid ${props => props.theme.altBlack};
+    transition: box-shadow 0.2s;
+    &:focus {
+      box-shadow: ${({ theme }) => theme.bs};
+    }
   }
   @media screen and (max-width: ${({ theme }) => theme.maxWidthSm}) {
     label {

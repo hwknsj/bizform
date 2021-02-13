@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ModalStyles = styled.dialog`
   .ReactModal__Overlay {
     opacity: 0;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
   }
 
   .ReactModal__Overlay--after-open {

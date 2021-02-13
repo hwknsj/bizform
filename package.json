@@ -1,12 +1,28 @@
 {
-  "name": "wizform-frontend",
-  "version": "0.9.1",
+  "name": "bizform",
+  "version": "0.9.2",
   "private": true,
   "author": "joél hawkins torres <joel@joel.fm> (https://joel.fm)",
   "description": "A demo front-end application for WizForm (https://www.wizform.com).",
+  "keywords": [
+    "nextjs",
+    "next.js",
+    "joel",
+    "hawkins",
+    "react",
+    "styled",
+    "components",
+    "ssr",
+    "joel.fm",
+    "joel.biz",
+    "demo",
+    "template",
+    "node",
+    "javascript"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hwknsj/wizform-frontend"
+    "url": "https://github.com/hwknsj/bizform"
   },
   "homepage": "https://bizform.vercel.app",
   "scripts": {
@@ -76,7 +92,8 @@
             {
               "ssr": true,
               "displayName": true
-            }
+            },
+            "inline-react-svg"
           ]
         ]
       },
@@ -90,7 +107,8 @@
             {
               "ssr": true,
               "displayName": true
-            }
+            },
+            "inline-react-svg"
           ]
         ]
       },
@@ -111,7 +129,8 @@
             {
               "ssr": true,
               "displayName": true
-            }
+            },
+            "inline-react-svg"
           ]
         ]
       }

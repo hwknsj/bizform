@@ -12,7 +12,7 @@ const Card = ({ selectedState, selectRef }) => {
           unmountOnExit
           className='card'
           classNames='card'
-          key={() => selectedState}
+          key={selectedState.State}
           timeout={{ enter: 400, exit: 400 }}
         >
           <InfoCard selectedState={selectedState} selectRef={selectRef} />

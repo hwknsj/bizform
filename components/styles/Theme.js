@@ -22,6 +22,7 @@ export const theme = {
   maxWidthLg: '1312px',
   maxWidth: '1312px',
   cardWidth: '662px',
+  cardHeight: '768px',
   lineHeight: '1'
 }
 
@@ -29,16 +30,17 @@ export const StyledPage = styled.div`
   background: white;
   color: ${props => props.theme.black};
   min-height: 100%;
+  height: 100%;
+  flex: 1 0 auto;
 `
 
 export const InnerStyle = styled.div`
   display: grid;
   justify-content: center;
   align-items: stretch;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr auto;
   max-width: ${props => props.theme.maxWidth};
   width: 100%;
-  min-height: 100%;
   margin: 0 auto;
   padding: 4rem;
   .container {
@@ -76,17 +78,13 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit
   }
   body {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding: 0;
     margin: 0;
     font-size: 1.6rem;
     font-family: 'Lato', 'Open Sans', sans-serif;
-  }
-  #__next {
-    height: 100%;
-    width: 100%;
   }
   a {
     text-decoration: none;
