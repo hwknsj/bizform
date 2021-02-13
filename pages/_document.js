@@ -1,16 +1,19 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
+
 import { GTM_ID } from '../lib/gtm'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
-  static async getStaticProps ({ renderPage }) {
+  static async getStaticProps({ renderPage }) {
     const sheet = new ServerStyleSheet()
-    const page = await renderPage(App => props => sheet.collectStyles(<App {...props} />))
+    const page = await renderPage(App => props =>
+      sheet.collectStyles(<App {...props} />)
+    )
     const styleTags = sheet.getStyleElement()
     return { ...page, styleTags }
   }
 
-  render () {
+  render() {
     return (
       <Html lang='en-US'>
         <Head>
