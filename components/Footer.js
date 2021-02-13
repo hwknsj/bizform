@@ -65,11 +65,7 @@ const Footer = () => {
           <div className='footer-flex'>
             <span className='left'>www/</span>{' '}
             <span className='right'>
-              <a
-                href='https://joel.fm'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
+              <a href='https://joel.fm' target='_blank' rel='noopener noreferrer'>
                 https://joel.fm
               </a>
             </span>
@@ -77,11 +73,7 @@ const Footer = () => {
           <div className='footer-flex'>
             <span className='left'>git/</span>{' '}
             <span className='right'>
-              <a
-                href='https://github.com/hwknsj'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
+              <a href='https://github.com/hwknsj' target='_blank' rel='noopener noreferrer'>
                 @hwknsj
               </a>
             </span>
@@ -90,7 +82,7 @@ const Footer = () => {
             <span className='left'>in/</span>{' '}
             <span className='right'>
               <a
-                href='https://www.linkedin.com/in/hwwknsj'
+                href='https://www.linkedin.com/in/hwknsj'
                 target='_blank'
                 rel='noopener noreferrer'
               >
