@@ -16,9 +16,18 @@ module.exports = {
     ecmaVersion: 2021,
     sourceType: 'module'
   },
-  plugins: ['react', 'promise', 'import', 'node'],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
+  plugins: ['react', 'promise', 'import', 'node', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'space-before-function-paren': 'warn'
+    'prettier/prettier': 'warn',
+    'space-before-function-paren': [
+      'off',
+      { anonymous: 'always', named: 'always', asyncArrow: 'always' }
+    ]
   }
 }

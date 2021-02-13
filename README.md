@@ -5,18 +5,19 @@
 <hr/>
 
 <p style='text-align: center;'><em>A demo by joél hawkins torres</em> • <a href='https://joel.fm/' target='_blank'>https://joel.fm</a></p>
-<div style='width: max-content; margin: 0 auto; text-align: center; display: grid; grid-auto-columns: 1fr auto; justify-content: center;'>
+
+<div style='width: min-content; margin: 0 auto; text-align: center; display: grid; grid-auto-columns: 1fr auto; justify-content: center;'>
   <div style='display: flex; flex-direction: row; justify-content: space-between;'>
     <span style='font-weight: bold; margin-right: 1rem;'>www/</span>
     <span style='margin-right: 0; margin-left: auto'><a href="https://joel.fm" target="_blank">joel.fm</a></span>
   </div>
   <div style='display: flex; flex-direction: row; justify-content: space-between;'>
     <span style='font-weight: bold; margin-right: 1rem;'>git/</span>
-    <span style='margin-right: 0; margin-left: auto'><a href='' target='_blank' alt='Github'>@hwknsj</a></span>
+    <span style='margin-right: 0; margin-left: auto'><a href='https://github.com/hwknsj' target='_blank' alt='Github'>@hwknsj</a></span>
   </div>
   <div style='display: flex; flex-direction: row; justify-content: space-between;'>
     <span style='font-weight: bold; margin-right: 1rem;'>in/</span>
-    <span style='margin-right: 0; margin-left: auto'><a href='' target='_blank' alt='LinkedIn'>@hwknsj</a></span>
+    <span style='margin-right: 0; margin-left: auto'><a href='https://www.linkedin.com/in/hwknsj' target='_blank' alt='LinkedIn'>@hwknsj</a></span>
   </div>
 </div>
 
