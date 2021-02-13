@@ -24,11 +24,19 @@ const RenderSelect = ({ children, onChange, selectRef }) => (
 )
 
 const Select = ({ data, setSelectedState, selectRef }) => {
-  const [states, setStates] = useState([])
+  const [
+    states,
+    setStates
+  ] = useState([])
 
-  useEffect(() => {
-    setStates(data)
-  }, [data])
+  useEffect(
+    () => {
+      setStates(data)
+    },
+    [
+      data
+    ]
+  )
 
   const renderOptions = useCallback(
     () =>
@@ -37,7 +45,9 @@ const Select = ({ data, setSelectedState, selectRef }) => {
           {state.State}
         </option>
       )),
-    [states]
+    [
+      states
+    ]
   )
 
   const handleChange = value => {
@@ -46,11 +56,7 @@ const Select = ({ data, setSelectedState, selectRef }) => {
 
   return (
     <SelectStyles>
-      <RenderSelect
-        className='select'
-        onChange={handleChange}
-        selectRef={selectRef}
-      >
+      <RenderSelect className='select' onChange={handleChange} selectRef={selectRef}>
         {renderOptions()}
       </RenderSelect>
     </SelectStyles>
@@ -64,7 +70,7 @@ Select.propTypes = {
 }
 
 RenderSelect.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.array,
   onChange: PropTypes.func.isRequired,
   selectRef: PropTypes.object.isRequired
 }
