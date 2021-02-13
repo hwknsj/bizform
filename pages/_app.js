@@ -1,13 +1,16 @@
 import 'normalize.css'
 
+import GoogleTagManager from '../components/GoogleTagManager'
 import Page from '../components/Page'
 import PropTypes from 'prop-types'
 
-function MyApp({ Component, pageProps }) {
+function MyApp ({ Component, pageProps }) {
   return (
-    <Page>
-      <Component {...pageProps} />
-    </Page>
+    <GoogleTagManager>
+      <Page>
+        <Component {...pageProps} />
+      </Page>
+    </GoogleTagManager>
   )
 }
 
