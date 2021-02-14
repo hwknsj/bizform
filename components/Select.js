@@ -47,7 +47,7 @@ const Select = ({ data, setSelectedState, selectRef }) => {
     gtag.event({
       action: 'selectItem',
       category: 'Select',
-      label: state.State
+      value: state.State
     })
     setSelectedState(() => state)
   }
