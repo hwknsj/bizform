@@ -1,3 +1,5 @@
+import * as gtag from '../lib/gtag'
+
 import { Fragment, useCallback, useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types'
@@ -40,7 +42,15 @@ const Select = ({ data, setSelectedState, selectRef }) => {
     [states]
   )
 
-  const handleChange = value => setSelectedState(() => JSON.parse(value))
+  const handleChange = value => {
+    const state = JSON.parse(value)
+    gtag.event({
+      action: 'selectItem',
+      category: 'Select',
+      label: state.State
+    })
+    setSelectedState(() => state)
+  }
 
   return (
     <SelectStyles>
