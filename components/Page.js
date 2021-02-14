@@ -10,7 +10,7 @@ const Page = ({ children, location }) => {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>WizForm | Uncomplicated Company Creation</title>
+        <title>BizForm | Uncomplicated Company Creation</title>
       </Head>
       <GlobalStyle />
       <StyledPage>
