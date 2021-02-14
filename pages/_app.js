@@ -3,7 +3,6 @@ import 'normalize.css'
 import * as gtag from '../lib/gtag'
 
 import GoogleTagManager from '../components/GoogleTagManager'
-// import GoogleTagManager from '../components/GoogleTagManager'
 import Page from '../components/Page'
 import PropTypes from 'prop-types'
 import { useEffect } from 'react'
