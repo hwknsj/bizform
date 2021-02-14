@@ -1,28 +1,28 @@
 import * as gtag from '../lib/gtag'
 
-import { Fragment, useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types'
 import SelectStyles from './styles/SelectStyles'
 
 const RenderSelect = ({ children, onChange, selectRef }) => (
-  <Fragment>
+  <>
     <label htmlFor='states'>Select your state</label>
     <select
       name='states'
       id='states'
       className='inline'
       onChange={e => onChange(e.target.value)}
-      defaultValue={''}
+      defaultValue=''
       ref={selectRef}
     >
-      <option disabled value={''}>
+      <option disabled value=''>
         {' '}
         -- select an option --{' '}
       </option>
       {children}
     </select>
-  </Fragment>
+  </>
 )
 
 const Select = ({ data, setSelectedState, selectRef }) => {

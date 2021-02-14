@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 import Card from '../components/CardAnimation'
 import PropTypes from 'prop-types'
@@ -10,14 +10,14 @@ const Home = ({ data }) => {
   const selectRef = useRef(null)
 
   return (
-    <Fragment>
+    <>
       <Select
         data={data}
         setSelectedState={setSelectedState}
         selectRef={selectRef}
       />
       <Card selectedState={selectedState} selectRef={selectRef} />
-    </Fragment>
+    </>
   )
 }
 
